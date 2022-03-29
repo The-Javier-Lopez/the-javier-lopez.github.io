@@ -67,6 +67,7 @@ body {
 }
 
 .info-wrapper {
+    margin-top: 2rem;
     display: flex ;
     grid-template-columns: 1fr;
     align-items: center;
@@ -75,8 +76,8 @@ body {
 
 
 .portfolio-items-wrapper {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 7rem;
+    padding-right:7rem;
     padding-bottom: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -104,7 +105,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 5%;  
+    border-radius: 24px;  
 }
 
 .img-text-wrapper {
@@ -116,8 +117,8 @@ body {
     align-items: center;
     height: 100%;
     text-align: center;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 .logo-wrapper img   {
@@ -125,8 +126,6 @@ body {
     margin-bottom: 20px;
     opacity: 0;
 }
-
-
 
 
 .img-text-wrapper .subtitle {
