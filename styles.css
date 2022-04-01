@@ -10,7 +10,7 @@ body {
  }
 
 .nav-wrapper {
-    background-color: #1A2238;
+    background-color: transparent;
     min-height: 30px;
     background-position: center;
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@ body {
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 28px;
+    padding: 26px;
 }
 
 .left-side {
@@ -26,9 +26,9 @@ body {
 }
 
 .nav-wrapper > .left-side > div {
+    margin-left: 16px;
     margin-right: 16px;
     font-size: 1.1em;
-    text-transform: uppercase;
 }
 
 .nav-link-wrapper {
@@ -61,9 +61,13 @@ body {
 
 .brand {
     margin-right: 16px;
-    font-size: 1.3em;
-    text-transform: uppercase;
-    color: #FF6A3D;
+    
+}
+
+.brand img{
+    width: 5em;
+    height: 3em;
+    margin-top: -15px;
 }
 
 .info-wrapper {
@@ -153,8 +157,9 @@ body {
 }
 
 .profile-image-wrapper img {
-    padding-left: 20px;
+    padding-left: 120px;
     width: auto;
+    max-width: 75%;
     height: auto;
 }
 
@@ -220,8 +225,8 @@ body {
 .content-wrapper{
     padding-left: 80px;
     padding-right: 80px;
-    padding-top: auto;
-    padding-bottom: auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 
@@ -436,11 +441,11 @@ body {
     bottom: 0;
     left: 0;
     background-color: #FF6A3D;
-    transform-origin: bottom right;
+    transform-origin: bottom left;
     transition: transform 0.30s ease-out;
   }
   
   .hover-underline-animation:hover:after {
     transform: scaleX(1);
-    transform-origin: bottom left;
+    transform-origin: bottom right;
   }
