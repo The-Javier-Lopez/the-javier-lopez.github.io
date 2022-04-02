@@ -25,12 +25,6 @@
                         <a href="#contact">Contact</a>                
                     </div>
                 </div>
-            
-                <div class="right-side">
-                    <div class="brand">
-                        <img src="images/profile_logo.jpg" alt="logo image">
-                    </div>
-                </div>
             </div>  
         <div orientation= "left" class = "contact-links-left-bar">
             <div class="social-bar-left-index">
@@ -166,5 +160,25 @@
         
         
     });
-</script>
+
+    var scrollableElement = document.body; //document.getElementById('scrollableElement');
+
+scrollableElement.addEventListener('wheel', checkScrollDirection);
+
+function checkScrollDirection(event) {
+  if (checkScrollDirectionIsUp(event)) {
+    return document.querySelector('.nav-wrapper').classList.remove('hide') ;
+  } else {
+    return document.querySelector('.nav-wrapper').classList.add('hide');
+  }
+}
+
+function checkScrollDirectionIsUp(event) {
+  if (event.wheelDelta) {
+    return event.wheelDelta > 0;
+  }
+  return event.deltaY < 0;
+}
+  
+ </script>
 </html>
