@@ -8,7 +8,7 @@ body {
      display: grid ;
      grid-template-columns: 1fr;
  }
-
+/*
 .nav-wrapper {
     background-color: transparent;
     min-height: 30px;
@@ -19,8 +19,31 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 26px;
+    top: 0;
+    transition: top 0.6s ease-in-out;
 }
+*/
 
+.nav-wrapper {
+    background-color: transparent;
+    min-height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 26px;
+    right: 0;
+    top: 0;
+    transition: top 0.5s ease-in-out;
+    z-index: 10;
+}
+.nav-wrapper.hide {
+    top: -55px;
+ }
+
+ 
 .left-side {
     display: flex;
 }
@@ -28,11 +51,12 @@ body {
 .nav-wrapper > .left-side > div {
     margin-left: 16px;
     margin-right: 16px;
-    font-size: 1.1em;
+    font-size: 1.4em;
 }
 
 .nav-link-wrapper {
     height: 26px;
+    padding-bottom: 10px;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.5s;
 }
