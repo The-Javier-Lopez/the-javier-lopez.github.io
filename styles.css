@@ -181,6 +181,11 @@ input[type=checkbox]{
         padding-top: 5px;
         padding-left: 2px; 
     }
+
+    /*ON mobile view the bar will not hide*/
+    .nav-wrapper.hide {
+        top: 0px;
+     }
     
     .menu { 
      display:none;
@@ -286,14 +291,180 @@ input[type=checkbox]{
         margin-right: 20px;
         
     }
-    .portfolio-item-wrapper {
-        margin-left: 10px;
-        margin-right: 10px;
+    .info-wrapper{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 100%;
+        margin: 0 auto ;
+        display: grid;
+        text-align: left;
+        font-weight:300;
+        font-size:42px;
     }
+    .intro1{
+        width: 100%;
+        margin: 0 auto ;
+        margin-left: 90px;
+        color: #FF6A3D;
+        display: block;
+        align-content: center;
+        font-size: 24px;
+    
+    }
+    
+    .intro2{
+        width: 100%;
+        margin: 0 auto ;
+        margin-left: 90px;
+        padding-top: 5px;
+        color:white;
+        display: block;
+        align-content: center;
+        font-size: 65px;
+    }
+    
+    .intro3{
+        width: 100%;
+        margin: 0 auto ;
+        padding-top: 10px;
+        margin-left: 90px;
+        display: block;
+        color: rgb(158, 158, 158) ;
+        align-content: left;
+        font-size: 27px;
+        padding-right: 20%;
+    }
+
+    
+    .two-column-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 20px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    .profile-image-wrapper{
+        width: 100%;
+        margin: 0 auto;
+        display: inline-block;
+        position: absolute;
+        height: 50vh;
+        width: 100vw;
+    }
+
+    .profile-image-wrapper img {
+        width: 100%;
+        margin: 0 auto;
+        height: 50vh;
+        width: 100vw;
+    }
+   
+    .profile-content-wrapper {
+        margin-top: 18rem;
+        margin-left: 100px;
+        position: absolute;
+        height: 50vh;
+        width: 100vw;
+        padding: 30px;
+        display: inline-block;
+    }
+
+    .profile-content-wrapper h1 {
+        font-size: 3rem;
+        color: #FF6A3D;
+    }
+
+    .profile-content-wrapper p1 {
+        padding-top: 10px;
+        display: block;
+        align-content: left;
+        font-size: 25px;
+        padding-right: 10%;
+        font-size: 2rem ;
+        color: #f1f1f1;
+        padding-bottom: 9rem;
+    }
+
+    /* Projects*/
+    .projects-intro{
+        width: 100%;
+        margin: 0px auto;
+        margin-left: 20px;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        padding-left: 100px;
+        padding-right: 100px;  
+    }
+    .content-wrapper{
+        width: 100%;
+        margin: 0px auto;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    
     .portfolio-items-wrapper {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 2rem;
+        margin-left: 80px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .portfolio-item-wrapper {
+        display: inline-block;
+        padding: 0.5rem;
+        position: relative;  
+    }
+    .portfolio-item-wrapper:hover{
+        cursor: none;
+    }
+    .portfolio-item-wrapper .img-text-wrapper .subtitle{
+        font-weight: 600;
+        font-size: medium;
+        color: #FF6A3D;
+        transition: 0.6s;
+    }
+
+    .portfolio-item-wrapper .img-text-wrapper .logo-wrapper img {
+        transition: 0.4s;
+        opacity: 1;
+    }
+
+    .portfolio-img-background {
+        height: 20px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 32px;  
+        opacity: 60%;
+    }
+
+    .img-text-wrapper {
+        position: relative;
+        top: 0;
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 20%;
+        text-align: center;
+        width:90%;
+        margin:0 auto;  
+    }
+
+    .logo-wrapper img   {
+        width: 50%;
+        margin-bottom: 20px;
+        opacity: 0;
+    }
+
+
+    .img-text-wrapper .subtitle {
+        font-weight: 600;
+        color: transparent;
     }
     
     .two-column-wrapper {
@@ -430,9 +601,13 @@ input[type=checkbox]{
 }
 
 .two-column-wrapper {
+    right: 0;
+    align-content: right;
+    align-items: right;
     padding-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-bottom: 3rem;
 }
 .portfolio-image-wrapper{
     margin-left: 200px;
@@ -441,13 +616,19 @@ input[type=checkbox]{
 }
 
 .profile-image-wrapper img {
-    margin-left: 200px;
-    border: 2px transparent;
     border-radius: 40px;
-    width: auto;
-    max-width: 82%;
+    border: 2px solid transparent ;
+    display: block;
+    margin-right: 2px;
+    margin-left: auto;
+    max-width: 66%;
     height: auto;
     padding-bottom: 2rem;
+}
+
+.profile-image-wrapper img:hover{
+    border: 2px solid #FF6A3D;
+    filter: brightness(80%);
 }
 
 
@@ -516,10 +697,8 @@ input[type=checkbox]{
     padding-bottom: 5rem;
 }
 
+.projects-intro{
 
-
-
-  .projects-intro{
     display: flex ;
     flex-direction: column;
     justify-content: center;
@@ -527,13 +706,13 @@ input[type=checkbox]{
     height: 100%;
     text-align: center;
     padding-left: 100px;
-    padding-right: 100px;
-    
-  }
+    padding-right: 100px;   
+}
   .projects-intro p1 {
       color: #FF6A3D;
         text-transform: initial;
         padding: 3rem;
+        margin-bottom: -2rem;
         align-items: center;
         font-size: 2rem
   }
