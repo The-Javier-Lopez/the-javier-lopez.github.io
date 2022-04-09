@@ -184,7 +184,7 @@ input[type=checkbox]{
 
     /*ON mobile view the bar will not hide*/
     .nav-wrapper.hide {
-        top: 0px;
+        top: -55px;
      }
     
     .menu { 
@@ -200,16 +200,16 @@ input[type=checkbox]{
         display: inline-block;
         color:white;
         transition: 0.3s ease;
-       }
-       .menu li {
-           background-color: #1a2238b5;
-       }
-       .menu li + li {
+    }
+   .menu li {    
+        background-color: #1a2238b5;
+    }
+    .menu li + li {
         margin-top: 12px;
         margin-bottom: 4px;
-       }   
-       input[type=checkbox]:checked ~ .menu{
-        display: block;
+    }   
+    input[type=checkbox]:checked ~ .menu{
+         display: block;
        }
        .hamburger {
         display: block;
@@ -346,19 +346,17 @@ input[type=checkbox]{
         margin-bottom: 20px;
     }
     .profile-image-wrapper{
-        max-width:fit-content;
         margin: 0 auto;
         display: inline-block;
         position: absolute;
         height: 50vh;
-        width: 100vw;
+        padding-left: 10px ;
+        width: 120vw;
     }
 
     .profile-image-wrapper img {
         width: 100%;
         margin: 0 auto;
-        height: 50vh;
-        width: 100vw;
     }
    
     .profile-content-wrapper {
@@ -410,7 +408,7 @@ input[type=checkbox]{
     
     .portfolio-items-wrapper {
         margin-left: -30px;
-        margin-right: -150px;
+        margin-right: -180px;
         display: flex;
         flex-direction: column;
     }
@@ -507,7 +505,8 @@ input[type=checkbox]{
         display: block;
         align-content: left;
         font-size: 25px;
-        padding-right: 10%;
+        margin-right: 20%;
+        padding-right: 80%;
         font-size: 2rem ;
         color: #f1f1f1;
       }
