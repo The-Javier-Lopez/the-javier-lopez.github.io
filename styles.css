@@ -8,88 +8,9 @@ body {
      display: grid ;
      grid-template-columns: 1fr;
  }
-/*
-.nav-wrapper {
-    background-color: transparent;
-    min-height: 30px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: 26px;
-    top: 0;
-    transition: top 0.6s ease-in-out;
-}
-
-.nav-wrapper.hide {
-    top: -55px;
- }
-
-.left-side {
-    display: flex;
-}
-
-.nav-wrapper > .left-side > div {
-    margin-left: 16px;
-    margin-right: 16px;
-    font-size: 1.4em;
-}
-
-.nav-link-wrapper {
-    height: 26px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.5s;
-}
-.nav-link-wrapper a {
-    color: white ;
-    text-decoration: none;
-    transition: color 0.5s;
-}
-
-.nav-link-wrapper:hover {
-    border-bottom: 2px solid #FF6A3D;
-}
-
-.nav-link-wrapper a:hover {
-    color: #FF6A3D;
-}
-
-.active-nav-link a{
-    font-size: 110%;
-    color: #FF6A3D;
-}
-
-.right-side {
-    display: flex;
-}
-
-.navbar {
-    top: 0;
-    min-height: 30px;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    justify-content: space-between;
-    padding: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #1A2238 ;
-    color: #FF6A3D;
-    transition: top 0.6s ease-in-out;
-}
-*/
 
 li{
     list-style: none;
-}
-
-li:hover{
-    background-color: #1A2238;
 }
 
 /* NAVBAR STYLING STARTS */
@@ -104,10 +25,10 @@ li:hover{
 
 
 .nav-wrapper.hide {
-    top: -70px;
+    top: -80px;
  }
 .navbar {
-    background-color: transparent;
+    background-color: #1a2238e0;
     min-height: 30px;
     background-position: center;
     background-repeat: no-repeat;
@@ -116,6 +37,7 @@ li:hover{
     display: flex;
     justify-content: space-between;
     padding: 26px;
+    padding-bottom: 10px;
 }
 
 .nav-links a {
@@ -128,7 +50,6 @@ li:hover{
     transition: border-bottom 0.5s;
 }
 .nav-links a:hover{
-    background-color: 5px 5px #1A2238;
     color: white;
     transition: 0.5s ease;
     border-bottom: 2px solid white;
@@ -150,7 +71,11 @@ li:hover{
     display: flex;
     gap: 1em;
     font-size: 18px;
-   
+}
+.menu-nav {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
 }
 .menu li:hover {
     color: white;
@@ -182,11 +107,8 @@ input[type=checkbox]{
         padding-left: 2px; 
     }
 
-    /*ON mobile view the bar will not hide*/
-    .nav-wrapper.hide {
-        top: -55px;
-     }
-    
+     /* Hamburger mennu into and x*/
+    /*
     .menu { 
      display:none;
      position: absolute;
@@ -208,6 +130,94 @@ input[type=checkbox]{
         margin-top: 12px;
         margin-bottom: 4px;
     }   
+    */
+    .menu.btn {
+        position: absolute;
+		z-index: 3;
+		right: 36px;
+		top: 36px;
+		cursor: pointer;
+		transition: all 0.5s ease-out;
+    }
+    .menu-btn .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: #FF6A3D;
+        z-index: 11;
+        transition: all 0.5s ease-out;
+    }
+    .menu-btn.close {
+        transform: rotate(180deg);
+    }
+    /* Styling the three lines to make it an X */
+    .menu-btn.close .btn-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-btn.close .btn-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.close .btn-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .menu {
+        position: absolute;
+        opacity: 0.9;
+        visibility: hidden;
+        margin: 0 auto;
+        padding-right: 50rem;
+        margin-left: -50%;
+    }
+
+    .menu-nav{
+        display: inline-block;
+        position: absolute;
+        color:white;
+        right: 200rem;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+    .menu-nav .nav-item:hover {
+        display: inline-block;
+        color:white;
+        transition: 0.3s ease;
+    }
+    .menu-nav .nav-item a{ 
+        padding: 0.5rem;   
+        background-color: #1a2238d8;
+    }
+    .menu-nav .nav-item + .nav-item {
+        margin-top: 12px;
+        margin-bottom: 4px;
+    }  
+
+    .menu.show {
+        visibility: visible;
+    }
+    /* Adding a transition delay
+		to the 4 items in the
+		navigation menu */
+	.nav-item:nth-child(1) {
+		transition-delay: 0.1s;
+	}
+
+	.nav-item:nth-child(2) {
+		transition-delay: 0.2s;
+	}
+
+	.nav-item:nth-child(3) {
+		transition-delay: 0.3s;
+	}
+
+	.nav-item:nth-child(4) {
+		transition-delay: 0.4s;
+	}
+    /*end*/
+    
     input[type=checkbox]:checked ~ .menu{
          display: block;
        }
