@@ -20,13 +20,20 @@
                 <ul class="nav-links">
                     <!-- USING CHECKBOX HACK -->
                     <input type="checkbox" id="checkbox_toggle" />
-                    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                    <div class="menu-btn" for="checkbox_toggle">
+                        <div class="btn-line"></div>
+                        <div class="btn-line"></div>
+                        <div class="btn-line"></div>
+                    </div>
+                  
                     <!-- NAVIGATION MENUS -->
                     <div class="menu">
-                        <li><a href="#top">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <div class="menu-nav">
+                            <li class="nav-item"><a href="#top">Home</a></li>
+                            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                        </div>
                     </div>
                 </ul>
             </nav>
@@ -136,24 +143,61 @@
         
     });
 
+    /* Hiding and showing the nav bar on scroll*/
     var scrollableElement = document.body; //document.getElementById('scrollableElement');
 
-scrollableElement.addEventListener('wheel', checkScrollDirection);
+    scrollableElement.addEventListener('wheel', checkScrollDirection);
 
-function checkScrollDirection(event) {
-  if (checkScrollDirectionIsUp(event)) {
-    return document.querySelector('.nav-wrapper').classList.remove('hide') ;
-  } else {
-    return document.querySelector('.nav-wrapper').classList.add('hide');
-  }
-}
+    function checkScrollDirection(event) {
+    if (checkScrollDirectionIsUp(event)) {
+        return document.querySelector('.nav-wrapper').classList.remove('hide') ;
+    } else {
+        return document.querySelector('.nav-wrapper').classList.add('hide');
+        }
+    }
+    function checkScrollDirectionIsUp(event) {
+    if (event.wheelDelta) {
+        return event.wheelDelta > 0;
+    }
+    return event.deltaY < 0;
+    }    
+    /**** end ****/
 
-function checkScrollDirectionIsUp(event) {
-  if (event.wheelDelta) {
-    return event.wheelDelta > 0;
-  }
-  return event.deltaY < 0;
-}
+    /*** Hamburger and X animated button ***/
+    const menuBtn =	document.querySelector(".menu-btn");
+
+	const menu = document.querySelector(".menu");
+
+	const menuNav =	document.querySelector(".menu-nav");
+
+    const navItems = document.querySelectorAll(".nav-item");
+
+	// Set the initial state of the menu
+	let showMenu = false;
+
+	menuBtn.addEventListener("click", toggleMenu);
+
+		function toggleMenu() {
+			if (!showMenu) {
+				menuBtn.classList.add("close");
+				menu.classList.add("show");
+				menuNav.classList.add("show");
+				navItems.forEach((item) =>
+					item.classList.add("show"));
+
+				// Reset the menu state
+				showMenu = true;
+			} else {
+				menuBtn.classList.remove("close");
+				menu.classList.remove("show");
+				menuNav.classList.remove("show");
+				navItems.forEach((item) =>
+					item.classList.remove("show"));
+
+				// Reset the menu state
+				showMenu = false;
+			}
+		}
   
  </script>
 </html>
