@@ -338,7 +338,7 @@ input[type=checkbox]{
         margin-bottom: 20px;
     }
     .profile-image-wrapper{
-        right: -80px;
+        right: -90px;
         padding-left: 40px;
         margin-left: 40px;
         margin-right: -40px;
@@ -356,6 +356,7 @@ input[type=checkbox]{
     }
    
     .profile-content-wrapper {
+        right: -70px;
         margin-top: 18rem;
         margin-left: 100px;
         position: absolute;
